@@ -1,0 +1,13 @@
+<button type="button" (click)="addArrays()" >Add Form</button>
+
+<br/>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="test">
+    <div formArrayName="arrays" *ngFor="let array of arrays.controls; let i = index;">
+        <div [formGroupName]="i">
+            <input type="text" formControlName="array">
+        </div>
+    </div>
+<button type="submit">Submit</button>
+</form>
