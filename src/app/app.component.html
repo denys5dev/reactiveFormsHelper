@@ -1,7 +1,13 @@
-<!--<form [formGroup] ="myForm">
-  <app-child [parentGroup]="myForm.controls.parentGroup"></app-child>
+<form [formGroup]="myForm">
+  <div formArrayName="array">
+    <div *ngFor="let child of myForm.controls.array.controls; let i=index;">
+      <div [formGroupName]="i">
+        <child [group]="myForm.controls.array.controls[i]"></child>
+      </div>
+    </div>
+  </div>
 </form>
 
-<button type="button" (click)="Update()">Update</button>-->
+<button type="button" (click)="Update()">Update</button>
 
-<app-dynamic></app-dynamic>
+<!-- <app-dynamic></app-dynamic> -->

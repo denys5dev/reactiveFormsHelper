@@ -9,16 +9,22 @@ import { ReactiveFormsModule, FormArray, FormGroup, FormBuilder } from '@angular
 export class DynamicComponent implements OnInit {
 
     form: FormGroup;
+    flag: boolean = false;
 
     constructor(private _fb: FormBuilder) { }
     get arrays(): FormArray {
         return <FormArray>this.form.get('arrays')
     }
+    
     ngOnInit() {
         this.form = this._fb.group({
             test: '',
             arrays: this._fb.array([ this.buildArrays() ])
         });
+
+        
+        this.flag = true;
+
      }
 
      buildArrays(): FormGroup {

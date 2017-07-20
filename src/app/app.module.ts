@@ -14,8 +14,7 @@ import { DynamicComponent } from './dynamicForms/dynamicForms.component';
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
-    FormsModule
+    ReactiveFormsModule
   ],
   providers: [FormGroupName],
   bootstrap: [AppComponent]
